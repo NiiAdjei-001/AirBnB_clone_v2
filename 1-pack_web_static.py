@@ -8,6 +8,7 @@ from fabric.api import *
 from os import path
 
 
+# Archive web_static content
 @task
 def do_pack():
     today = datetime.now()
