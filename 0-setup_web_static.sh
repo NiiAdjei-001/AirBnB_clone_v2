@@ -5,10 +5,10 @@
 # Install Nginx If Unavailable
 ##############################
 word='nginx'
-if ! [[ "dpkg -l | grep -F -q \"ii  ${word}\"" ]]; then
+if ! dpkg -l | grep -F -q "ii  $word"; then
 	apt-get install -y nginx
 fi
-if ! [[ "service --status-all | grep -F -q \"[+] ${word}\"" ]]; then
+if ! service --status-all | grep -F -q "[+] ${word}"; then
 	service ${word} start
 fi
 
@@ -36,8 +36,8 @@ EOF
 #############################
 #Generate simulink
 #############################
-if [[ -h  /data/web_static/current ]]; then
-	echo 'Deleting simulink...'
+if [[ -L  /data/web_static/current ]]; then
+	#echo 'Deleting simulink...'
 	rm /data/web_static/current
 fi	
 
