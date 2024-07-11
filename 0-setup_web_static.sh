@@ -16,7 +16,7 @@ fi
 #Generating static directories
 ##############################
 mkdir -p /data/web_static/releases/test
-mkdir -p /data/web_static/releases/shared
+mkdir -p /data/web_static/shared
 
 #############################
 #Generate index.html
