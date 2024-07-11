@@ -8,9 +8,9 @@ from fabric.api import *
 from os import path
 
 
-# Archive web_static content
 @task
 def do_pack():
+    """Archives contents of web_static dir"""
     today = datetime.now()
     source_url = 'web_static'
     archive_url = "versions/web_static_{}{}{}{}{}{}.tgz".format(
