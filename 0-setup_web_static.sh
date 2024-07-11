@@ -21,7 +21,7 @@ mkdir -p /data/web_static/releases/shared
 #############################
 #Generate index.html
 #############################
-echo 'Generating index.html...'
+#echo 'Generating index.html...'
 cat >  /data/web_static/releases/test/index.html << EOF
 <!DOCTYPE html>
 <html>
@@ -41,20 +41,20 @@ if [[ -L  /data/web_static/current ]]; then
 	rm /data/web_static/current
 fi	
 
-echo 'Creating simulink...'
+#echo 'Creating simulink...'
 ln -s  /data/web_static/releases/test /data/web_static/current
 
 #############################
 #Set Ownership
 #############################
-echo 'Setting User Ownershop...'
+#echo 'Setting User Ownershop...'
 chown -R ubuntu:ubuntu /data
 
 #############################
 #Modifiy Nginx Configuration
 #############################
 nginx_conf_path='/etc/nginx/sites-available/default'
-echo 'Modifying Nginx Configuration...'
+#echo 'Modifying Nginx Configuration...'
 # sed -i 's#root /var/www/html;#alias /data/web_static/current/#' ${nginx_conf_path}
 cat > ${nginx_conf_path} << EOF
 #Default Server Configuration
